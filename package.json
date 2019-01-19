@@ -1,0 +1,22 @@
+{
+    "name": "jf-node",
+    "description": "Node class for double chained list",
+    "version": "1.0.0",
+    "author": "Joaquín Fernández <public@joaquinfernandez.net>",
+    "license": "MIT",
+    "main": "index.js",
+    "homepage": "https://github.com/joaquinfq/jfNode#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/joaquinfq/jfNode.git"
+    },
+    "bugs": {
+        "url": "https://github.com/joaquinfq/jfNode/issues"
+    },
+    "devDependencies": {
+        "istanbul": "^0.4.5"
+    },
+    "scripts": {
+        "test": "istanbul cover --include-all-sources --print both --report html -x test.js test.js"
+    }
+}
