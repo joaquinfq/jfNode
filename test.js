@@ -94,7 +94,7 @@ function testClone()
 
 function testRemove()
 {
-    const _data  = buildData(5);
+    const _data  = buildData();
     const _nodes = buildNodes(_data);
     _nodes.forEach((node, index) => index && node.after(_nodes[index - 1]));
     // Eliminamos el último que no tiene next
@@ -113,6 +113,17 @@ function testRemove()
     );
 }
 
+function testToArray()
+{
+    const _data  = buildData();
+    const _nodes = buildNodes(_data);
+    _nodes.forEach((node, index) => index && node.after(_nodes[index - 1]));
+    // Da igual el nodo donde se empiece, se tiene que devolver toda la secuencia ordenada.
+    _nodes.forEach(
+        node => assert.deepStrictEqual(node.toArray().map(node => node.data), _data)
+    );
+}
+
 function testToJson()
 {
     values.forEach(
@@ -125,4 +136,5 @@ testAfter();
 testBefore();
 testClone();
 testRemove();
+testToArray();
 testToJson();

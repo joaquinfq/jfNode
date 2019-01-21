@@ -9,9 +9,9 @@ class jfNode
     /**
      * Constructor de la clase.
      *
-     * @param data
-     * @param previous
-     * @param next
+     * @param {*}       data     Datos a almacenar en el nodo.
+     * @param {jf.Node} previous Nodo anterior al actual.
+     * @param {jf.Node} next     Nodo siguiente al actual.
      */
     constructor(data = null, previous = null, next = null)
     {
@@ -136,6 +136,30 @@ class jfNode
             _next.previous = _previous;
             this.next      = null;
         }
+    }
+
+    /**
+     * Convierte la secuencia de nodos en un array.
+     *
+     * @return {jf.Node[]} Listado de nodos.
+     */
+    toArray()
+    {
+        const _nodes = [];
+        let _node    = this.previous;
+        while (_node)
+        {
+            _nodes.unshift(_node);
+            _node = _node.previous;
+        }
+        _node = this;
+        while (_node)
+        {
+            _nodes.push(_node);
+            _node = _node.next;
+        }
+
+        return _nodes;
     }
 
     /**
