@@ -1,7 +1,7 @@
 {
     "name": "jf-node",
     "description": "Node class for double chained list",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "author": "Joaquín Fernández <public@joaquinfernandez.net>",
     "license": "MIT",
     "main": "index.js",
